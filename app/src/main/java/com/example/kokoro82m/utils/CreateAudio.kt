@@ -8,6 +8,8 @@ import ai.onnxruntime.OrtEnvironment
 import ai.onnxruntime.OrtSession
 import android.content.Context
 import android.util.Log
+import com.example.kokoro82m.tts.inference.StyleLoader
+import com.example.kokoro82m.tts.inference.Tokenizer
 
 fun createAudio(
     phonemes: String,
@@ -24,7 +26,7 @@ fun createAudio(
     }
     val truncatedPhonemes = phonemes.take(MAX_PHONEME_LENGTH)
 
-    val tokens = Tokenizer.tokenize(truncatedPhonemes)
+    val tokens = Tokenizer.Companion.tokenize(truncatedPhonemes)
     if (tokens.size > MAX_PHONEME_LENGTH) {
         throw IllegalArgumentException("Context length is $MAX_PHONEME_LENGTH, but leave room for the pad token 0 at the start & end")
     }
@@ -72,7 +74,7 @@ fun createAudioFromStyleVector(
     }
     val truncatedPhonemes = phonemes.take(MAX_PHONEME_LENGTH)
 
-    val tokens = Tokenizer.tokenize(truncatedPhonemes)
+    val tokens = Tokenizer.Companion.tokenize(truncatedPhonemes)
     if (tokens.size > MAX_PHONEME_LENGTH) {
         throw IllegalArgumentException("Context length is $MAX_PHONEME_LENGTH, but leave room for the pad token 0 at the start & end")
     }

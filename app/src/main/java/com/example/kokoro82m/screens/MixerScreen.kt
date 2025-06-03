@@ -41,7 +41,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.kokoro82m.utils.PhonemeConverter
-import com.example.kokoro82m.utils.StyleLoader
+import com.example.kokoro82m.tts.inference.StyleLoader
 import com.example.kokoro82m.utils.createAudioFromStyleVector
 import com.example.kokoro82m.utils.playAudio
 import kotlinx.coroutines.CoroutineScope

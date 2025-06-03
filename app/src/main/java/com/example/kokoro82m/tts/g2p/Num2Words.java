@@ -1,6 +1,6 @@
 // Adopted from: https://gist.github.com/INFOTRICKS1on1/b231071c350afc499f0b3997406ca898
 
-package com.example.kokoro82m.g2p;
+package com.example.kokoro82m.tts.g2p;
 
 import java.io.*;   //importing library class "io"
 class Num2Word  //creating a class of name "Num2Word"
