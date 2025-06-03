@@ -1,3 +1,5 @@
+// Adopted from: https://github.com/puff-dayo/Kokoro-82M-Android
+
 package com.example.kokoro82m
 
 import KokoroTheme
@@ -132,7 +134,8 @@ private fun generateAudio(
 ) {
     scope.launch(Dispatchers.IO) {
         try {
-            val phonemes = phonemeConverter.phonemize(text)
+//            val phonemes = phonemeConverter.phonemize(text)
+            val phonemes = "ɐ ɹˈAnbˌO ɪz ɐ mˌiɾɪˌɔɹəlˈɑʤɪkᵊl fənˈɑmənˌɑn ðæt ɪz kˈɔzd bI ɹəflˈɛkʃən, ɹəfɹˈækʃən ænd dəspˈɜɹʒən ʌv lˈIt ɪn wˈɔɾəɹ dɹˈɑpləts ɹəzˈʌltɪŋ ɪn ɐ spˈɛktɹəm ʌv lˈIt əpˈɪɹɪŋ ɪn ðə skˈI."
             Log.d("Kokoro", "Phonemes: $phonemes")
             withContext(Dispatchers.Main) {
                 Toast.makeText(context, "Phonemes: $phonemes", Toast.LENGTH_LONG).show()

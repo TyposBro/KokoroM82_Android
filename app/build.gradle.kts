@@ -62,18 +62,16 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation("com.microsoft.onnxruntime:onnxruntime-android:1.20.0")
-    implementation("org.jetbrains.bio:npy:0.3.5")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.1")
+    implementation(libs.onnxruntime.android)
+    implementation(libs.npy)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
     implementation(libs.material3)
-    implementation("com.github.medavox:IPA-Transcribers:v0.2")
+    implementation(libs.ipa.transcribers)
 
-    val lifecycle_version = "2.8.7"
-    val arch_version = "2.2.0"
 
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
 
 tasks.withType<JavaCompile> {

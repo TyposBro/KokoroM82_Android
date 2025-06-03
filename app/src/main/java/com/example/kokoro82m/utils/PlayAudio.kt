@@ -1,3 +1,5 @@
+// Adopted from: https://github.com/puff-dayo/Kokoro-82M-Android
+
 package com.example.kokoro82m.utils
 
 import android.media.AudioFormat
