@@ -56,7 +56,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.kokoro82m.screens.Acknowledgements
 import com.example.kokoro82m.viewmodels.MainViewModel
 import com.example.kokoro82m.utils.PhonemeConverter
-import com.example.kokoro82m.utils.StyleLoader
+import com.example.kokoro82m.tts.inference.StyleLoader
 import com.example.kokoro82m.utils.createAudio
 import com.example.kokoro82m.utils.playAudio
 import com.example.kokoro82m.utils.saveAudio
