@@ -3,16 +3,14 @@
 package com.example.kokoro82m.tts.inference // Ensure this matches your package structure
 
 import android.content.Context
+import com.example.kokoro82m.names
 import java.io.InputStream
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
 class StyleLoader(private val context: Context) {
 
-    val names = listOf(
-        "af",
-        "af_heart"
-    )
+
 
     private val styleResourceMap: Map<String, Int> = names.associateWith { name ->
         val resourceId = context.resources.getIdentifier(name, "raw", context.packageName)

@@ -68,6 +68,20 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+val names = listOf(
+    "af",
+    "af_bella",
+    "af_nicole",
+    "af_sarah",
+    "af_sky",
+    "am_adam",
+    "am_michael",
+    "bf_emma",
+    "bf_isabella",
+    "bm_george",
+    "bm_lewis"
+)
+
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
@@ -238,15 +252,12 @@ fun BasicScreen(
     onGenerateAudio: (String, String, Float, Boolean, () -> Unit) -> Unit
 ) {
     var text by remember { mutableStateOf("This is her warm heart, her warmest kokoro, unwavering love and comfort.") }
-    var style by remember { mutableStateOf("af") }
+    var style by remember { mutableStateOf(names[0]) }
     var speed by remember { mutableFloatStateOf(1.0f) }
     var isProcessing by remember { mutableStateOf(false) }
     var shouldSaveFile by remember { mutableStateOf(false) }
 
-    val names = listOf(
-        "af",
-        "af_heart",
-    )
+
     var expanded by remember { mutableStateOf(false) }
 
     Column(

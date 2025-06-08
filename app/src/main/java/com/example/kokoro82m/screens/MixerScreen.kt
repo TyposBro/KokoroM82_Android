@@ -40,6 +40,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import com.example.kokoro82m.names
 import com.example.kokoro82m.utils.PhonemeConverter
 import com.example.kokoro82m.tts.inference.StyleLoader
 import com.example.kokoro82m.utils.createAudioFromStyleVector
@@ -63,10 +64,10 @@ fun MixerScreen(
 
 
     var selectedStyles by remember {
-        mutableStateOf(listOf("af", "af_heart"))
+        mutableStateOf(listOf(names[0], names[1]))
     }
     var weights by remember {
-        mutableStateOf(mapOf("af" to 0.5f, "af_heart" to 0.5f))
+        mutableStateOf(mapOf(names[0] to 0.5f, names[1] to 0.5f))
     }
     var interpolationMode by remember {
         mutableStateOf(InterpolationMode.LINEAR)
@@ -78,7 +79,7 @@ fun MixerScreen(
     var isProcessing by remember { mutableStateOf(false) }
     var shouldSaveFile by remember { mutableStateOf(false) }
 
-    val styleNames = styleLoader.names
+    val styleNames = names
 
     Column(
         modifier = Modifier
@@ -142,8 +143,8 @@ fun MixerScreen(
         ) {
             Button(
                 onClick = {
-                    selectedStyles = listOf("af", "af_heart")
-                    weights = mapOf("af" to 0.5f, "af_heart" to 0.5f)
+                    selectedStyles = listOf(names[0], names[1])
+                    weights = mapOf(names[0] to 0.5f, names[1] to 0.5f)
                 }
             ) {
                 Text("Reset")

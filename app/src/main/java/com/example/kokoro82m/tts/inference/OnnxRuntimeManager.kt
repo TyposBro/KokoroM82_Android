@@ -48,7 +48,7 @@ object OnnxRuntimeManager {
             }
 
             Log.d("OnnxRuntimeManager", "Copying model to cache: ${modelFile.absolutePath}")
-            inputStream = context.resources.openRawResource(R.raw.kokoro) // Your model in res/raw
+            inputStream = context.resources.openRawResource(R.raw.model) // Your model in res/raw
             outputStream = FileOutputStream(modelFile)
             val buffer = ByteArray(4 * 1024) // 4K buffer
             var read: Int

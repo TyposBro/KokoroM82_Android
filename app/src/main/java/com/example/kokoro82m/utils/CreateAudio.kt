@@ -32,7 +32,9 @@ fun createAudio(
     }
 
     val styleLoader = StyleLoader(context)
-    val styleArray = styleLoader.getStyleArray(voice)
+//    val styleArray = styleLoader.getStyleArray(voice)
+    val styleIndex = tokens.size
+    val styleArray = styleLoader.getStyleArray(name = voice, index = styleIndex)
 
     val paddedTokens = listOf(0L) + tokens.toList() + listOf(0L)
     val tokenTensor = OnnxTensor.createTensor(
@@ -49,12 +51,12 @@ fun createAudio(
     )
 
     val inputs = mapOf(
-        "tokens" to tokenTensor,
+        "input_ids" to tokenTensor,
         "style" to styleTensor,
         "speed" to speedTensor
     )
     val results = session.run(inputs)
-    val audioTensor = results[0].value as FloatArray
+    val audioTensor = (results[0].value as Array<FloatArray>)[0]
     results.close()
 
     return Pair(audioTensor, SAMPLE_RATE)
@@ -95,12 +97,12 @@ fun createAudioFromStyleVector(
     )
 
     val inputs = mapOf(
-        "tokens" to tokenTensor,
+        "input_ids" to tokenTensor,
         "style" to styleTensor,
         "speed" to speedTensor
     )
     val results = session.run(inputs)
-    val audioTensor = results[0].value as FloatArray
+    val audioTensor = (results[0].value as Array<FloatArray>)[0]
     results.close()
 
     return Pair(audioTensor, SAMPLE_RATE)
